@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .mainsec {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh; /* Set to viewport height */
+            overflow: hidden; /* To prevent background image from overflowing */
+            background-image: url(https://i.pinimg.com/564x/bf/c0/5c/bfc05cf6dc7055e9d1850b1e313216e9.jpg);
+            background-size: cover; /* Cover the entire div */
+            background-position: center; /* Center the background image */
+        }
+        
+        .mainsec div {
+            width: 100%;
+            height: 600px;
+            color: black; /* Add text color so text is visible */
+            font-weight: bold;
+        }
+        .mainsec div h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .mainsec div h2{
+            text-align: center;
+        }
+        .btn,
+        .save{
+            align-items: center;
+            background-color: rgb(162, 64, 64);
+            width: 300PX;
+            border: none;
+            border-radius: 10px;
+           color: white;
+           font-weight: bold;
+           padding: 10px;
+           font-size: 25px;
+            margin-left: 140px;
+            cursor: pointer;
+        }
+        .cov{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+
+        }
+        h1, h2{
+           margin-left: 150px;
+            
+        }
+        .save{
+            background-color: green;
+            margin-top: 20px;
+        }
+        #previous{
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section class="mainsec">
+        <div class="cov">
+            <h1>People entered:</h1>
+            <h2 id="counter">0</h2>
+            <button class="btn" id="btn" onclick="increment()">Increment</button>
+            <button class="save" onclick="save()">SAVE</button>
+            <p id="previous">Previous entries:</p>
+        </div>
+    </section>
+    <script>
+
+//greetings//
+
+let name = "RUTH ADAMS"
+let greetings = "Hi, my name is "
+let check = " I'm learning Js "
+let myGreetings = greetings +   name  +  check
+alert(myGreetings)
+
+
+//initializing//
+        let count = 0
+
+
+//get element using id//
+let countEl = document.getElementById("counter")
+let saveEl = document.getElementById("previous")
+
+
+//function to increment the count//
+        function increment() {
+            count++
+            countEl.innerText = count
+            console.log(count)
+        }
+//function to save each counts//
+        function save() {
+            let countSep = count + " - "
+            saveEl.textContent += countSep
+            countEl.textContent = 0
+            count = 0
+        }
+
+
+        // let firstName = "Ruth "
+        // let lastName = "Adams "
+        // let fullName = firstName + lastName
+        // console.log(fullName)
+
+        // let names = "linda"
+        // let greetingss = "hi there, "
+        // function greet(){
+        //     alert( greetingss + names )
+        // }
+        // greet()
+
+       
+
+
+    </script>
+</body>
+</html>

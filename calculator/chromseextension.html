@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension</title>
+    <style>
+        body{
+            padding: 10px;
+        }
+        button{
+            background-color: green;
+            color: white;
+            margin-top: 10px;
+            padding: 10px;
+            width: 10%;
+            border: none;
+        }
+        input{
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            
+        }
+        ul{
+            margin-top: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+        a{
+            color: green;
+        }
+        li{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="input-el"><br>
+    <button id="input-btn">Save input</button>
+    <ul id="ul-el"></ul>
+    <script>
+        const ulEl = document.getElementById("ul-el")
+        let myLeads = []
+        const inputEl = document.getElementById("input-el")
+        document.getElementById("input-btn").onclick = function (){
+            myLeads.push(inputEl.value)
+            inputEl.value = ""
+            renderLeads()  
+        }
+        function renderLeads(){
+            let listItems = ""
+        for (i = 0; i < myLeads.length; i++){
+
+            listItems += `
+            <li>
+                <a target='_blank' href=' + ${myLeads[i]}'> 
+                    ${myLeads[i]}
+                    </a>
+                </li> 
+                `
+        }
+        ulEl.innerHTML = listItems
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .maincontainer{
+            width: 100%;
+        }
+        .purchase{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-left: 200px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        p{
+            margin-left: 260px;
+            font-size: 20px;
+        }
+        #error{
+            margin-left: 150px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="maincontainer">
+    <figure> <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWfAhSnxfuCsndI6p8prJ-7tllTOZnRzsdyZMwkTyR9sykofI5" alt=""></figure>
+    <p>Yam</p>
+    <button class="purchase" id="purchase" onclick="error()">Purchase - $180</button>
+    <p id="error"></p>
+</div>
+
+
+    <script>
+let errorMessage = document.getElementById("error")
+let message = "Something went wrong, please try again"
+function error (){
+        errorMessage.textContent = message
+        
+}
+
+        // let points = "my points "
+        // let myPoints = 3
+        // prompt( points + myPoints )
+        // function add3points (){
+        //     myPoints = myPoints + 3
+        //     alert(myPoints)
+        // } 
+        // add3points()
+        
+        // function removePoint() {
+        //     myPoints = myPoints - 1
+        //     alert(myPoints)
+        // }
+        // removePoint()
+    </script>
+</body>
+</html>

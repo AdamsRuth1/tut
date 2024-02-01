@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+
+        }
+.main{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+#black{
+font-size: 60px;
+color: yellow;
+}
+button{
+    background-color: rgb(213, 213, 33);
+    color: green;
+    padding: 15px;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 id="black">
+            Blackjack
+        </h1>
+        <p id="message">Want to play around?</p>
+        <p id="cards">Cards:</p>
+        <p id="sum">Sum:</p>
+        <button onclick="startGame()"> START GAME</button>
+        <button  onclick="newCard()">NEW CARD</button>
+        <p id="name"></p>
+    </div>
+    <script>
+
+let player = {
+    name: "Per",
+    chips: 145
+}
+let cards = []
+let sum = 0
+let hasBlackJack = false
+let isAlive = false
+let message = ""
+let messageEL = document.getElementById("message")
+let sumEl = document.getElementById("sum")
+let cardEl = document.getElementById("cards")
+let playerEl = document.getElementById("name")
+playerEl.textContent = player.name + ": $" + player.chips
+
+function getRandomeCard(){
+    
+    let randomNumber = Math.floor(Math.random() * 13) + 1
+    if (randomNumber > 10){
+        return 10
+    }else if (randomNumber === 1){
+        return 11
+    }else{
+        return randomNumber
+
+    }
+}
+function renderGame(){
+    sumEl.textContent = "Sum:" + sum
+    cardEl.textContent = "Cards: "
+
+
+    for (let i = 0; i < cards.length; i++){
+        cardEl.textContent += cards[i] + " "
+    }
+    if (sum <= 20) {
+    message = ("do you want to draw a new  card?")
+    
+}else if (sum === 21) {
+            message = ("wohoo! you've got blackjack!")
+            hasBlackJack = true
+}else {
+    message = ("you're out of the game")
+    isAlive = false
+}
+messageEL.textContent = message
+
+}
+function newCard(){
+    if (isAlive === true && hasBlackJack === false){
+        let card = getRandomeCard()
+    sum += card 
+    cards.push(card)
+    renderGame()
+    
+    }
+}
+function startGame(){
+    isAlive = true 
+    let firstCard = getRandomeCard()
+let secondCard = getRandomeCard()
+cards = [firstCard, secondCard]
+sum = firstCard + secondCard
+    renderGame()
+}
+
+
+// for (let i = 10; i < 101; i += 10){
+
+// }
+
+
+
+// let age = 21
+// prompt(age)
+// if (age < 21){
+//     prompt("you cannot enter the club")
+// }else{
+//     prompt("you're welcome")
+// }
+
+// let age = 97
+// prompt(age)
+// if (age < 100){
+//     prompt("not elegible")
+// }else if (age === 100){
+//     prompt("heres your birthday card")
+// }else {
+//     prompt("youve gotten card before")
+// }
+    </script>
+</body>
+</html>

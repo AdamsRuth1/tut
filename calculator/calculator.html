@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #result{
+            color: white;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            margin-left: 170px;
+            font-size: 20px;
+            
+        }
+        .first{
+            display: flex;
+            }
+        .circlefirst{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e0ddd3;
+            color: black;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .circleyellow{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fcc612;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .circle{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #4f4d48;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+       
+        .circlezero{
+            background-color: #4f4d48;
+            width: 110px;
+            color: white;
+            display: flex;
+            font-size: 20px;
+            align-items: center;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <span id="result">hello</span>
+        <div class="first">
+            <div class="circlefirst" id="circle">AC</div>
+            <div class="circlefirst" id="circle"><SPan><SUp>+</SUp>/ <SPan><SUb>-</SUb></SPan></SPan></div>
+            <div class="circlefirst" id="percentage">%</div>
+
+            <div class="circleyellow" id="divide">÷</div>
+
+        </div>
+        <div class="first">
+            <div class="circle" id="circle" onclick="add()">7</div>
+            <div class="circle" id="circle" onclick="add()">8</div>
+            <div class="circle" id="circle" onclick="add()">9</div>
+
+            <div class="circleyellow" id="multiply">X</div>
+
+
+        </div>
+        <div class="first">
+            <div class="circle" id="circle">4</div>
+            <div class="circle" id="circle">5</div>
+            <div class="circle" id="circle">6</div>
+
+            <div class="circleyellow" id="minus" style="font-size: 50px;">-</div>
+
+        </div>
+        <div class="first">
+            <div class="circle" id="circle">1</div>
+            <div class="circle" id="circle">2</div>
+            <div class="circle" id="circle">3</div>
+
+            <div class="circleyellow" id="plus">+</div>
+
+
+        </div>
+        <div class="first">
+            <div class="circlezero" id="circle">0</div>
+            <div class="circle" id="circle">.</div>
+            <div class="circleyellow" id="equalTo">=</div>
+        </div>
+       
+    </div>
+    <script>
+        let numbers = document.getElementById("circle")
+        let result = document.getElementById("result")
+        let operation1 = document.getElementById("plus")
+        let operation2 = document.getElementById("minus")
+        let operation3 = document.getElementById("multiply")
+        let operation4 = document.getElementById("divide")
+        let equality = document.getElementById("equalTo")
+        let operation5 = document.getElementById("percentage")
+
+        function add(number){
+            let sum = numbers + operation1 + numbers 
+            let currentResult =  sum
+            result.innerText = sum 
+            alert(currentResult)
+        }
+    </script>
+</body>
+</html>
