@@ -27,6 +27,7 @@ order(2000,()=>{})
 
 .then(()=>{
     return order(2000, ()=>{console.log(`${stocks.fruits[2]} has been selected`)})
+    
 })
 .then(()=>{
     return order(1000, ()=>{console.log("fruits has been chopped")})
